@@ -1,11 +1,17 @@
+'use client'
+
+import { CustomButtonProps } from '@/types'
 import React from 'react'
 
-export default function CustomButton() {
+export default function CustomButton({title, containerStyles, handleClick, btnType}: CustomButtonProps) {
   return (
     <button
-    className='custom-btn bg-red-500'
+    disabled={false}
+    type={btnType ||'button'}
+    className={`custom-btn ${containerStyles}`}
+    onClick={handleClick}
     >
-    <span>Car button</span>
+    <span>{title}</span>
       
   </button>
   )

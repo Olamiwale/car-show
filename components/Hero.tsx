@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import Image from 'next/image'
 import CustomButton from './CustomButton'
@@ -14,18 +16,30 @@ export default function Hero() {
         Streamline your car rental experience with our effortless booking
         process.
       </p>
-      <CustomButton />
+
+
+      <CustomButton 
+      title='Explore Car'
+      containerStyles='bg-blue-600 text-white rounded-full my-10'
+      handleClick={()=>{}}
+      />
       
     </div>
 
-    <div
-    className='xl:flex-[1.5] flex justify-end items-end w-full xl:h-screen;
-    '>
+    <div className='xl:flex-[1.5] flex justify-end items-end w-full xl:h-screen'>
 
-        <div>
-            <Image src='/hero.png'  alt='hero' fill 
+        <div className='relative xl:w-full w-[90%] xl:h-full h-[590px] z-0'>
+            <Image 
+            src='/hero.png'  
+            alt='hero' fill 
             className='object-contain'/>
         </div>
+
+        <div 
+        className='bg-hero-bg bg-repeat-round h-[590px] w-full overflow-hidden xl:h-screen
+         absolute xl:-top-24 xl:-right-1/2 -right-1/4 -z-10'></div>
+
+       
     </div>
    
 
@@ -33,3 +47,6 @@ export default function Hero() {
   </div>
   )
 }
+
+/*  w-full;
+ */
