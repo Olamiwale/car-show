@@ -2,10 +2,19 @@ import React from 'react'
 import Hero from '@/components/Hero'
 import SearchBar from '@/components/SearchBar'
 import CustomFilter from '@/components/CustomFilter'
+import { fetchCars } from '@/utils'
 
-export default function page() {
+export default async function page() {
+
+  const allCars = await fetchCars()
+
+  console.log(allCars)
+
+  const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1;
+
+ 
   return (
-    <div className='overflow-hidden'>
+    <main className='overflow-hidden'>
       <Hero />
 
        <div  className='mt-12 sm:px-16 px-6 py-4 max-width' id='discover'>
@@ -24,8 +33,20 @@ export default function page() {
           </div>
         </div>
 
+{!isDataEmpty ? (
+  <section>
+    we have cars
+  </section>
+):(
+  <div>
+     <h2 className='text-xl text-black font-bold'>No result shown</h2>
+  </div>
+)}
+
+
+
        </div>
 
-    </div>
+    </main>
   )
 }
