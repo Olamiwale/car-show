@@ -48,5 +48,3 @@ export default function Hero() {
   )
 }
 
-/*  w-full;
- */

@@ -2,15 +2,16 @@ import React from 'react'
 import Hero from '@/components/Hero'
 import SearchBar from '@/components/SearchBar'
 import CustomFilter from '@/components/CustomFilter'
+import CarCard from '@/components/CarCard'
 import { fetchCars } from '@/utils'
 
 export default async function page() {
 
   const allCars = await fetchCars()
 
-  console.log(allCars)
+  
 
-  const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1;
+  const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 ;
 
  
   return (
@@ -35,18 +36,21 @@ export default async function page() {
 
 {!isDataEmpty ? (
   <section>
-    we have cars
+
+    
+    <div className='grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 grid-cols-1 w-full gap-8 pt-14'>
+    {allCars?.map((car) =>(
+      <CarCard car= {car} />
+    ))}
+    </div>
   </section>
 ):(
   <div>
      <h2 className='text-xl text-black font-bold'>No result shown</h2>
+     <p>{allCars?.message}</p>
   </div>
 )}
-
-
-
        </div>
-
     </main>
   )
 }
