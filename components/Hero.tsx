@@ -37,13 +37,8 @@ export default function Hero() {
 
         <div 
         className='bg-hero-bg bg-repeat-round h-[590px] w-full overflow-hidden xl:h-screen
-         absolute xl:-top-24 xl:-right-1/2 -right-1/4 -z-10'></div>
-
-       
+         absolute xl:-top-24 xl:-right-1/2 -right-1/4 -z-10'></div>  
     </div>
-   
-
-   
   </div>
   )
 }

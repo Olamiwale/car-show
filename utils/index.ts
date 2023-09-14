@@ -38,10 +38,13 @@ export const calculateCarRent = (city_mpg: number, year: number) => {
 };
 
 
+
+//fetching data from ninjas-api
+
 export async function fetchCars() {
     const headers = {
         'X-RapidAPI-Key': '9c7d67d5eemshf6c0cae16a89f9cp1b77e5jsn6187dc5df110',
-		'X-RapidAPI-Host': 'cars-by-api-ninjas.p.rapidapi.com'
+		    'X-RapidAPI-Host': 'cars-by-api-ninjas.p.rapidapi.com'
     }
 
     const response = await fetch('https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=corolla',{
